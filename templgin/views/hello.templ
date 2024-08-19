@@ -7,11 +7,10 @@ templ Hello(name string) {
 		<title>Page Title</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1"/>
 		<link rel="stylesheet" href=""/>
-		<style>
-    </style>
 		<script src=""></script>
+		<script src="https://unpkg.com/htmx.org"></script>
 		<body>
-		  {name}
+		  {name} @button() <!-- calling components must have () -->
 		</body>
 	</html>
 }
