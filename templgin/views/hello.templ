@@ -1,6 +1,10 @@
 package views
 
-templ Hello(name string) {
+import (
+    "strconv"
+)
+
+templ Hello(count int) {
 	<!DOCTYPE html>
 	<html lang="en">
 		<meta charset="UTF-8"/>
@@ -10,7 +14,11 @@ templ Hello(name string) {
 		<script src=""></script>
 		<script src="https://unpkg.com/htmx.org"></script>
 		<body>
-		  {name} @button() <!-- calling components must have () -->
+		  @Counter(count) @Button() <!-- calling components must have () -->
 		</body>
 	</html>
+}
+
+templ Counter(count int) {
+    <div>{strconv.Itoa(count)}</div>
 }
